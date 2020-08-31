@@ -18,7 +18,7 @@ public class Game : MonoBehaviour
     void Update()
     {
         scoreText.text = score + " $";
-        btnTextUpgrade.text = "Buy + 1 click for " + shopCost + " $";
+        btnTextUpgrade.text = "Buy + 1 click " + shopCost + " $";
     }
 
     // ↓ Покупка улучшения клика
@@ -43,7 +43,7 @@ public class Game : MonoBehaviour
         shopPanel.SetActive(!shopPanel.activeSelf);
     }
 
-    // ↓ При клике ↓
+    // ↓ При клике увеличивает счет(score) 
     public void OnClick()
     {        
         score += bonus;

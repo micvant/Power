@@ -6,6 +6,7 @@ using System.Threading;
 public class Game : MonoBehaviour
 {
     public GameObject shopPanel;
+    public GameObject Bild;
     public Text scoreText;
     public Text btnTextUpgrade;
     public Text btnTextAutoClick;
@@ -88,5 +89,6 @@ public class Game : MonoBehaviour
     public void OnClick()
     {        
         score += bonus;
+        Bild.GetComponent<Animator>().SetTrigger("Hit");
     }
 }

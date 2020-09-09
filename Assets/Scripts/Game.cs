@@ -18,10 +18,11 @@ public class Game : MonoBehaviour
     private int costAutoClick = 10;
 
     private int index = 0;
-    private int bonus = 1;
-    private int score;
+    public static int bonus = 1;
+    public static int score;
     [Header("АвтоКликеры")]
     private int VacuumCounts;
+
     void Start()
     {
         StartCoroutine(BonusPerSecond());
@@ -32,6 +33,10 @@ public class Game : MonoBehaviour
         scoreText.text = score + " $";
         btnTextUpgrade.text = "Купить " + shopCost + " $";
         btnTextAutoClick.text = "Купить " + costAutoClick + " $";
+        if(VacuumCounts >= 1)
+        {
+            Bild.GetComponent<Animator>().SetTrigger("Hit");
+        }
     }
 
     // ↓ Покупка улучшения клика
@@ -85,10 +90,4 @@ public class Game : MonoBehaviour
         }
     }
 
-    // ↓ При клике увеличивает счет(score) 
-    public void OnClick()
-    {        
-        score += bonus;
-        Bild.GetComponent<Animator>().SetTrigger("Hit");
-    }
 }

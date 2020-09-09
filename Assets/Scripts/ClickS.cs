@@ -5,8 +5,7 @@ using UnityEngine.EventSystems;
 
 public class ClickS : MonoBehaviour
 {
-    public GameObject GameScript;
-    
+    public GameObject GameScript; 
     // Start is called before the first frame update
     void Start()
     {   
@@ -18,5 +17,6 @@ public class ClickS : MonoBehaviour
     {
         Game.score += Game.bonus;
         GetComponent<Animator>().SetTrigger("Hit");
+        GetComponent<HealthBuild>().GetHit(10);
     }
 }

@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 5203810933808912958}
   - component: {fileID: 5203810933808912956}
   - component: {fileID: 5203810933808912963}
+  - component: {fileID: 919132147937328611}
   m_Layer: 0
   m_Name: hospital
   m_TagString: Untagged
@@ -188,7 +189,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4969387562435847326}
-  m_LocalRotation: {x: 0.000000014901159, y: 1, z: 0.000000014901159, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -2.4630394, y: -0.12094158, z: 3.9680746}
   m_LocalScale: {x: 0.1500001, y: 0.15000002, z: 0.1500001}
   m_Children:
@@ -244,7 +245,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65fd454b05425824fb2886a36859a6eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameScript: {fileID: 0}
+  GameScript: {fileID: 7775649469765467723, guid: 6b89a94edaf71f447823be0022c4872b, type: 3}
+--- !u!114 &919132147937328611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4969387562435847326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5939b557e4c6b4c4e957e6b1388f3ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  Health: 100
+  healthBar: {fileID: 7050294797668238034, guid: 40477fc5deb44824fa8af4d98ed83b21, type: 3}
+  prefab: {fileID: 1450285174928683605, guid: 038b17b5b29d69a4f9fad29401eba2df, type: 3}
 --- !u!1 &7477114887582047373
 GameObject:
   m_ObjectHideFlags: 0

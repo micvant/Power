@@ -8,6 +8,10 @@ public class HealthBuild : MonoBehaviour
     public int maxHealth = 100;
     public int Health;
     public HealthBar healthBar;
+    public Transform prefab;
+    
+    Quaternion myRotation;
+    Vector3 myVector;
 
     void Start()
     {
@@ -22,6 +26,10 @@ public class HealthBuild : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+           
+            myVector = new Vector3(0.06f, 1.22f, 0.88f);
+            myRotation = new Quaternion(18f, 234f, 22f, 0);
+            Instantiate(prefab, myVector, myRotation);
         }
         else
         {

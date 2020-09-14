@@ -260,8 +260,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   Health: 0
-  healthBar: {fileID: 7050294797668238034, guid: 40477fc5deb44824fa8af4d98ed83b21, type: 3}
-  prefab: {fileID: 1450285174928683605, guid: 038b17b5b29d69a4f9fad29401eba2df, type: 3}
+  healthBar: {fileID: 3497587699526916891, guid: 40477fc5deb44824fa8af4d98ed83b21, type: 3}
+  prefab: {fileID: 1450285174928683612, guid: 038b17b5b29d69a4f9fad29401eba2df, type: 3}
+  MainCamera: {fileID: 7775649469765467723, guid: 6b89a94edaf71f447823be0022c4872b, type: 3}
 --- !u!1 &7477114887582047373
 GameObject:
   m_ObjectHideFlags: 0

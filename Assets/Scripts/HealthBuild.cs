@@ -7,32 +7,26 @@ public class HealthBuild : MonoBehaviour
     // ↓ Максимальное здоровье здания   
     public int maxHealth = 100;
     public int Health;
-    public HealthBar healthBar;
-    public Transform prefab;
-    
-    Quaternion myRotation;
-    Vector3 myVector;
 
+    public GameObject prefab;
+    public GameObject MainCamera;
+    
     void Start()
     {
         Health = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        GameObject.Find("HealthBar").GetComponent<HealthBar>().SetMaxHealth(maxHealth);
     }
 
     public void GetHit(int damage)
     {
         int health = Health - damage;
-        healthBar.SetHealth(health);
+        GameObject.Find("HealthBar").GetComponent<HealthBar>().SetHealth(health);
         if (health <= 0)
         {
-            Destroy(gameObject);
-           
-            myVector = new Vector3(-3.982734f, -0.04373159f, 3.657505f);
-            myRotation = new Quaternion(-2.938f, 89.751f, -3.153f, 0);
-            //Instantiate(prefab, myVector, myRotation);
-            Instantiate(prefab);
-           // prefab.transform.position = myVector;
-           // prefab.transform.rotation = myRotation;
+            Destroy(gameObject);   
+            GameObject clone;
+            clone = Instantiate(prefab);
+            MainCamera.GetComponent<Game>().Bild = clone;        
         }
         else
         {

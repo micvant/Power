@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Threading;
+using System;
 
 public class Game : MonoBehaviour
 {
@@ -35,7 +35,15 @@ public class Game : MonoBehaviour
         btnTextAutoClick.text = "Купить " + costAutoClick + " $";
         if(VacuumCounts >= 1)
         {
-            Bild.GetComponent<Animator>().SetTrigger("Hit");
+            try
+            {
+                //Bild.GetComponent<HealthBuild>().GetHit(1);
+                //Bild.GetComponent<Animator>().SetTrigger("Hit");
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e);
+            }
         }
     }
 

@@ -99,8 +99,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450285174928683612}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 9197b8e3853867e4e9c0fc37294ef82f, type: 3}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c7409717f4f8a194bb224ebfc0386667, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -149,5 +149,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   Health: 0
-  healthBar: {fileID: 7050294797668238034, guid: 40477fc5deb44824fa8af4d98ed83b21, type: 3}
-  prefab: {fileID: 5745782802180996644, guid: 7e96a6b7e412b7b498c098c85a93bfe6, type: 3}
+  healthBar: {fileID: 3497587699526916891, guid: 40477fc5deb44824fa8af4d98ed83b21, type: 3}
+  prefab: {fileID: 4969387562435847326, guid: 7e96a6b7e412b7b498c098c85a93bfe6, type: 3}
+  MainCamera: {fileID: 7775649469765467723, guid: 6b89a94edaf71f447823be0022c4872b, type: 3}

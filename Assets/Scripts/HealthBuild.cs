@@ -27,9 +27,12 @@ public class HealthBuild : MonoBehaviour
         {
             Destroy(gameObject);
            
-            myVector = new Vector3(0.06f, 1.22f, 0.88f);
-            myRotation = new Quaternion(18f, 234f, 22f, 0);
-            Instantiate(prefab, myVector, myRotation);
+            myVector = new Vector3(-3.982734f, -0.04373159f, 3.657505f);
+            myRotation = new Quaternion(-2.938f, 89.751f, -3.153f, 0);
+            //Instantiate(prefab, myVector, myRotation);
+            Instantiate(prefab);
+           // prefab.transform.position = myVector;
+           // prefab.transform.rotation = myRotation;
         }
         else
         {

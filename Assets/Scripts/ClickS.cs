@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 
 public class ClickS : MonoBehaviour
 {
@@ -11,7 +8,9 @@ public class ClickS : MonoBehaviour
     void OnMouseDown()
     {
         Game.score += Game.bonus;
+        // ↓ Включение анимации
         GetComponent<Animator>().SetTrigger("Hit");
+        // ↓ Нанесение урона
         GetComponent<HealthBuild>().GetHit(10);
     }
 }

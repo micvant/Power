@@ -14,18 +14,21 @@ public class HealthBuild : MonoBehaviour
     void Start()
     {
         Health = maxHealth;
+        // ↓ Устанавливаем максимальное кол-во ХП
         GameObject.Find("HealthBar").GetComponent<HealthBar>().SetMaxHealth(maxHealth);
     }
-
+    // ↓ Получение урона
     public void GetHit(int damage)
     {
         int health = Health - damage;
+        // ↓ Устанавливаем Хдоровье в ХП баре
         GameObject.Find("HealthBar").GetComponent<HealthBar>().SetHealth(health);
         if (health <= 0)
         {
+            // ↓ Уничтожение здания
             Destroy(gameObject);   
-            GameObject clone;
-            clone = Instantiate(prefab);
+            // ↓ Создание здания
+            GameObject clone = Instantiate(prefab);
             MainCamera.GetComponent<Game>().Bild = clone;        
         }
         else

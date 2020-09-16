@@ -2014,10 +2014,10 @@ RectTransform:
   m_Father: {fileID: 345933533}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -210.46002, y: 595.23}
-  m_SizeDelta: {x: -431.16275, y: -1199.2338}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 144.41858, y: -53.099976}
+  m_SizeDelta: {x: 288.83725, y: 106.27908}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504741166
 MonoBehaviour:
@@ -2261,7 +2261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794749170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -104, y: -2, z: -29.439941}
+  m_LocalPosition: {x: -93.5, y: -17.2, z: -29.439941}
   m_LocalScale: {x: 14.141524, y: 11.623095, z: 86.05784}
   m_Children: []
   m_Father: {fileID: 1504741165}
@@ -2369,7 +2369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2379,12 +2379,12 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
     m_FontStyle: 1
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 5
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
@@ -2549,7 +2549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3497587700276467138, guid: 40477fc5deb44824fa8af4d98ed83b21, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 428.5
+      value: 453
       objectReference: {fileID: 0}
     - target: {fileID: 3497587700276467138, guid: 40477fc5deb44824fa8af4d98ed83b21, type: 3}
       propertyPath: m_SizeDelta.x

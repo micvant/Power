@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class Buttons : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GetComponent<SpriteRenderer>().sprite = layer_down;   
+        GetComponent<SpriteRenderer>().sprite = layer_down;
+        SceneManager.LoadScene("SampleScene");
     }
 
     private void OnMouseUp()

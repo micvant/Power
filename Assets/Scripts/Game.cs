@@ -10,18 +10,20 @@ public class Game : MonoBehaviour
     public Text scoreText;
     public Text btnTextUpgrade;
     public Text btnTextAutoClick;
+    public Button shopBtn;
 
-    [Header("Массив цен улучшений")]    
+    [Header("Массив цен улучшений")]
     [Header("Улучшение клика")]
     private int shopCost = 100;
     [Header("Улучшение АвтоКлика")]
     private int costAutoClick = 10;
-
+    private int costBonusTimer = 10;
     private int index = 0;
+    public float bonusTime;
     public static int bonus = 1;
     public static int score;
     [Header("АвтоКликеры")]
-    private int VacuumCounts;
+    private int VacuumCounts, VacuumBonus = 1;
 
     void Start()
     {
@@ -33,12 +35,12 @@ public class Game : MonoBehaviour
         scoreText.text = score + " $";
         btnTextUpgrade.text = "Купить " + shopCost + " $";
         btnTextAutoClick.text = "Купить " + costAutoClick + " $";
-        if(VacuumCounts >= 1)
+        if (VacuumCounts >= 1)
         {
             try
             {
-                //Bild.GetComponent<HealthBuild>().GetHit(1);
-                //Bild.GetComponent<Animator>().SetTrigger("Hit");
+                // Bild.GetComponent<HealthBuild>().GetHit(1);
+                // Bild.GetComponent<Animator>().SetTrigger("Hit");
             }
             catch (Exception e)
             {
@@ -50,7 +52,7 @@ public class Game : MonoBehaviour
     // ↓ Покупка улучшения клика
     public void buyUpgrade()
     {
-        if(score >= shopCost)
+        if (score >= shopCost)
         {
             // ↓ Добавляем +1$ при Клике
             bonus++;
@@ -59,12 +61,26 @@ public class Game : MonoBehaviour
             index++;
             // ↓ Увеличиваем цену в 2 раза 
             shopCost *= 2;
-        }  else
+        }
+        else
         {
             // ↓ Добавить вывод текста на экран "Не хватает денег!"
         }
     }
 
+    // ↓ Использование бонуса удвоения
+    public void startBonusTimer()
+    {
+        int cost = 2 * VacuumCounts;
+        if (score >= cost)
+        {
+            StartCoroutine(BonusTimer(bonusTime));
+        }
+        else
+        {
+            Debug.Log("Not money!");
+        }
+    }
     // ↓ Открытие/Закрытие магазина улучшений
     public void openShop()
     {
@@ -74,7 +90,7 @@ public class Game : MonoBehaviour
     // Покупка ↓ АвтоКлика
     public void BuyVacuum()
     {
-        if(score >= costAutoClick)
+        if (score >= costAutoClick)
         {
             // ↓ Добавляем +1$ АвтоКлик
             VacuumCounts++;
@@ -82,8 +98,10 @@ public class Game : MonoBehaviour
             score -= costAutoClick;
             // ↓ Увеличиваем цену в 2 раза 
             costAutoClick *= 2;
-        }else
+        }
+        else
         {
+            Debug.Log("Error!");
             // ↓ Добавить вывод текста на экран "Не хватает денег!"
         }
     }
@@ -93,8 +111,24 @@ public class Game : MonoBehaviour
     {
         while (true)
         {
-            score += VacuumCounts;
+            score = score + (VacuumCounts * VacuumBonus);
             yield return new WaitForSeconds(1);
+        }
+    }
+    IEnumerator BonusTimer(float time)
+    {
+        if (VacuumCounts >= 1)
+        {
+            shopBtn.interactable = false;
+            VacuumBonus *= 2;
+            yield return new WaitForSeconds(time);
+            VacuumBonus /= 2;
+            shopBtn.interactable = true;
+        }
+        else
+        {
+            Debug.Log(VacuumCounts);
+            Debug.Log("Not Vacuums!");
         }
     }
 

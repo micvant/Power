@@ -405,7 +405,7 @@ RectTransform:
   - {fileID: 284696124}
   - {fileID: 1997557752}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1978,7 +1978,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1504741164
 GameObject:
@@ -2611,7 +2611,7 @@ PrefabInstance:
     - target: {fileID: 919132147937328611, guid: 7e96a6b7e412b7b498c098c85a93bfe6, type: 3}
       propertyPath: prefab
       value: 
-      objectReference: {fileID: 1450285174928683612, guid: 038b17b5b29d69a4f9fad29401eba2df, type: 3}
+      objectReference: {fileID: 4885819871848243279, guid: 840d6b59c1d6b8344b00c4a6556b11de, type: 3}
     - target: {fileID: 4969387562435847326, guid: 7e96a6b7e412b7b498c098c85a93bfe6, type: 3}
       propertyPath: m_Name
       value: hospital
@@ -2654,7 +2654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745782802180996644, guid: 7e96a6b7e412b7b498c098c85a93bfe6, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5745782802180996644, guid: 7e96a6b7e412b7b498c098c85a93bfe6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -64,6 +64,10 @@ public class Game : MonoBehaviour
                 Debug.Log(e);
             }
         }
+        if (Input.GetKey("escape"))  // если нажата клавиша Esc (Escape)
+        {
+            Application.Quit();    // закрыть приложение
+        }
     }
     // ↓ Перед выходом из игры Сохраняем прогресс
     void OnApplicationQuit()
@@ -100,9 +104,9 @@ public class Game : MonoBehaviour
     {
         if (VacuumCounts >= 1)
         {
-            costBonusTimer *= VacuumCounts;
             if (score >= costBonusTimer)
             {
+                costBonusTimer *= VacuumCounts;
                 score -= costBonusTimer;
                 StartCoroutine(BonusTimer(bonusTime));
             }

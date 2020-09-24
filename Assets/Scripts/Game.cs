@@ -25,7 +25,22 @@ public class Game : MonoBehaviour
     public static int score;
     [Header("АвтоКликеры")]
     private int VacuumCounts, VacuumBonus = 1;
+    private Save sv = new Save();
 
+    // ↓ Перед стартом игры
+    private void Awake()
+    {
+        // ↓ если есть файл сохранения то загружаем и присваиваем значения
+        if (PlayerPrefs.HasKey("sv"))
+        {
+            sv = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("sv"));
+            score = sv.score;
+            VacuumCounts = sv.VacuumCounts;
+            shopCost = sv.shopCost;
+            costAutoClick = sv.costAutoClick;
+            costBonusTimer = sv.costBonusTimer;
+        }
+    }
     void Start()
     {
         StartCoroutine(BonusPerSecond());
@@ -50,7 +65,17 @@ public class Game : MonoBehaviour
             }
         }
     }
+    // ↓ Перед выходом из игры Сохраняем прогресс
+    void OnApplicationQuit()
+    {
+        sv.score = score;
+        sv.VacuumCounts = VacuumCounts;
+        sv.shopCost = shopCost;
+        sv.costAutoClick = costAutoClick;
+        sv.costBonusTimer = costBonusTimer;
 
+        PlayerPrefs.SetString("sv", JsonUtility.ToJson(sv));
+    }
     // ↓ Покупка улучшения клика
     public void buyUpgrade()
     {
@@ -125,6 +150,7 @@ public class Game : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
+    // ↓ Удваивает количество пылесосов
     IEnumerator BonusTimer(float time)
     {
         if (VacuumCounts >= 1)
@@ -149,4 +175,14 @@ public class Game : MonoBehaviour
         }
     }
 
+}
+
+[Serializable]
+public class Save
+{
+    public int score;
+    public int VacuumCounts;
+    public int costAutoClick;
+    public int costBonusTimer;
+    public int shopCost;
 }

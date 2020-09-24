@@ -49,9 +49,9 @@ public class Game : MonoBehaviour
     void Update()
     {
         scoreText.text = score + " $";
-        btnTextUpgrade.text = "Купить " + shopCost + " $";
-        btnTextAutoClick.text = "Купить " + costAutoClick + " $";
-        btnTextBuyUpgrade.text = $"Купить {costBonusTimer}";
+        btnTextUpgrade.text = $"Купить {shopCost} $";
+        btnTextAutoClick.text = $"Купить {costAutoClick} $";
+        btnTextBuyUpgrade.text = $"Купить {costBonusTimer} $";
         if (VacuumCounts >= 1)
         {
             try
@@ -106,8 +106,8 @@ public class Game : MonoBehaviour
         {
             if (score >= costBonusTimer)
             {
-                costBonusTimer *= VacuumCounts;
                 score -= costBonusTimer;
+                costBonusTimer++;
                 StartCoroutine(BonusTimer(bonusTime));
             }
             else
@@ -180,7 +180,7 @@ public class Game : MonoBehaviour
     }
 
 }
-
+// ↓ Файлы сохранения
 [Serializable]
 public class Save
 {

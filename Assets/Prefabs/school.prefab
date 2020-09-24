@@ -1735,7 +1735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   Health: 0
-  prefab: {fileID: 4885819871848243279, guid: 840d6b59c1d6b8344b00c4a6556b11de, type: 3}
+  prefab: {fileID: 4969387562435847326, guid: 7e96a6b7e412b7b498c098c85a93bfe6, type: 3}
   MainCamera: {fileID: 7775649469765467723, guid: 6b89a94edaf71f447823be0022c4872b, type: 3}
 --- !u!1 &8634722603419112705
 GameObject:

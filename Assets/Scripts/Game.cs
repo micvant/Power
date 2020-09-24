@@ -10,13 +10,14 @@ public class Game : MonoBehaviour
     public Text scoreText;
     public Text btnTextUpgrade;
     public Text btnTextAutoClick;
-    public Button shopBtn;
+    public Text btnTextBuyUpgrade;
+    public Button[] shopBtn;
 
     [Header("Массив цен улучшений")]
     [Header("Улучшение клика")]
-    private int shopCost = 100;
+    private int shopCost = 50;
     [Header("Улучшение АвтоКлика")]
-    private int costAutoClick = 10;
+    private int costAutoClick = 100;
     private int costBonusTimer = 10;
     private int index = 0;
     public float bonusTime;
@@ -35,6 +36,7 @@ public class Game : MonoBehaviour
         scoreText.text = score + " $";
         btnTextUpgrade.text = "Купить " + shopCost + " $";
         btnTextAutoClick.text = "Купить " + costAutoClick + " $";
+        btnTextBuyUpgrade.text = $"Купить {costBonusTimer}";
         if (VacuumCounts >= 1)
         {
             try
@@ -71,10 +73,18 @@ public class Game : MonoBehaviour
     // ↓ Использование бонуса удвоения
     public void startBonusTimer()
     {
-        int cost = 2 * VacuumCounts;
-        if (score >= cost)
+        if (VacuumCounts >= 1)
         {
-            StartCoroutine(BonusTimer(bonusTime));
+            costBonusTimer *= VacuumCounts;
+            if (score >= costBonusTimer)
+            {
+                score -= costBonusTimer;
+                StartCoroutine(BonusTimer(bonusTime));
+            }
+            else
+            {
+                Debug.Log("Not money!");
+            }
         }
         else
         {
@@ -119,11 +129,18 @@ public class Game : MonoBehaviour
     {
         if (VacuumCounts >= 1)
         {
-            shopBtn.interactable = false;
+            for (int i = 0; i < shopBtn.Length; i++)
+            {
+                shopBtn[i].interactable = false;
+            }
+
             VacuumBonus *= 2;
             yield return new WaitForSeconds(time);
             VacuumBonus /= 2;
-            shopBtn.interactable = true;
+            for (int i = 0; i < shopBtn.Length; i++)
+            {
+                shopBtn[i].interactable = true;
+            }
         }
         else
         {

@@ -2,8 +2,8 @@
 
 public class ClickS : MonoBehaviour
 {
-    public GameObject GameScript; 
-    
+    public GameObject GameScript;
+
     // ↓ При клике увеличивает счет(score) 
     void OnMouseDown()
     {
@@ -11,6 +11,6 @@ public class ClickS : MonoBehaviour
         // ↓ Включение анимации
         GetComponent<Animator>().SetTrigger("Hit");
         // ↓ Нанесение урона
-        GetComponent<HealthBuild>().GetHit(10);
+        GetComponent<HealthBuild>().GetHit(1);
     }
 }

@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   Health: 0
-  prefab: {fileID: 6985972683472722100, guid: 22fc9015733587444b36ddd6d9615c59, type: 3}
+  prefab: {fileID: 4553058523128530951, guid: 22fc9015733587444b36ddd6d9615c59, type: 3}
   MainCamera: {fileID: 7775649469765467723, guid: 6b89a94edaf71f447823be0022c4872b, type: 3}
 --- !u!114 &2809410318309841857
 MonoBehaviour:

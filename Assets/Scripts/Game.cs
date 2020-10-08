@@ -48,7 +48,13 @@ public class Game : MonoBehaviour
     // ↓ Обновление каждого кадра + Обновление счета
     void Update()
     {
-        scoreText.text = score + " $";
+        if (score >= 100000)
+            scoreText.text = string.Format("{0:N0}KK $", score / 10000);
+        else if (score >= 10000)
+            scoreText.text = string.Format("{0:N0}K $", score / 1000);
+        else
+            scoreText.text = score + " $";
+
         btnTextUpgrade.text = $"Купить {shopCost} $";
         btnTextAutoClick.text = $"Купить {costAutoClick} $";
         btnTextBuyUpgrade.text = $"Купить {costBonusTimer} $";

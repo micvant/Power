@@ -11,6 +11,6 @@ public class ClickS : MonoBehaviour
         // ↓ Включение анимации
         GetComponent<Animator>().SetTrigger("Hit");
         // ↓ Нанесение урона
-        GetComponent<HealthBuild>().GetHit(1);
+        GetComponent<HealthBuild>().GetHit(25);
     }
 }
